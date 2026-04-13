@@ -1,0 +1,33 @@
+# Q: Profile and marks templates
+
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def profile():
+    return render_template("profile.html")
+
+@app.route('/marks')
+def marks():
+    return render_template("marks.html")
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+#profile.html
+<table border="1">
+<tr><th>Name</th><td>Alex</td></tr>
+<tr><th>Age</th><td>22</td></tr>
+<tr><th>Course</th><td>BSc IT</td></tr>
+</table>
+
+
+#marks.html
+<table border="1">
+<tr><th>Subject</th><th>Score</th></tr>
+<tr><td>Maths</td><td>85</td></tr>
+<tr><td>Science</td><td>90</td></tr>
+<tr><td>English</td><td>78</td></tr>
+</table>
