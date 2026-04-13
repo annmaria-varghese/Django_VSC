@@ -9,3 +9,12 @@
 <footer>Footer</footer>
 </body>
 </html>
+
+
+#home.html
+
+{% extends 'base.html' %}
+
+{% block content %}
+Welcome to Home Page
+{% endblock %}
