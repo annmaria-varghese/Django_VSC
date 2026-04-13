@@ -1,0 +1,39 @@
+# Q: Student Registration Form with age validation
+
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        age = int(request.form['age'])
+        course = request.form['course']
+
+        if age >= 18:
+            return f"Registration successful for {name} in {course}."
+        else:
+            return "You must be at least 18 years old to register."
+
+    return render_template('form.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+#form.html
+
+<form method="POST">
+Name: <input type="text" name="name"><br>
+Age: <input type="number" name="age"><br>
+Course:
+<select name="course">
+<option>BSc IT</option>
+<option>BSc</option>
+<option>BCA</option>
+</select><br>
+<input type="submit">
+</form>
