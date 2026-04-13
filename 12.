@@ -1,0 +1,11 @@
+# Q: Login validation
+
+def login(request):
+    if request.method == 'POST':
+        user = request.POST['username']
+        pwd = request.POST['password']
+
+        if user == "admin" and pwd == "123":
+            return HttpResponse("Login Success")
+        else:
+            return HttpResponse("Invalid")
