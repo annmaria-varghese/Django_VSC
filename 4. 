@@ -1,0 +1,17 @@
+# Q: Student Profile using template
+
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def student():
+    data = {
+        "name": "John Doe",
+        "age": 20,
+        "course": "BSc IT",
+        "city": "Bangalore"
+    }
+    return render_template("student.html", data=data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
