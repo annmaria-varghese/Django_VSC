@@ -1,0 +1,27 @@
+# Q: Store student name & email in database
+
+import sqlite3
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET','POST'])
+def index():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+
+        conn = sqlite3.connect('students.db')
+        conn.execute("INSERT INTO student (name,email) VALUES (?,?)",(name,email))
+        conn.commit()
+        conn.close()
+
+    return render_template('form.html')
+
+@app.route('/data')
+def data():
+    conn = sqlite3.connect('students.db')
+    data = conn.execute("SELECT * FROM student").fetchall()
+    return str(data)
+
+app.run(debug=True)
