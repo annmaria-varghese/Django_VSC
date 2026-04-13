@@ -1,0 +1,7 @@
+from django.core.paginator import Paginator
+
+events = Event.objects.all()
+p = Paginator(events, 5)
+
+page = request.GET.get('page')
+data = p.get_page(page)
