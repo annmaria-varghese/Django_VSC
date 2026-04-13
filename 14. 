@@ -1,0 +1,9 @@
+# Q: Display all events
+
+Event.objects.all()
+
+# Update
+Event.objects.filter(id=3).update(location="Mumbai")
+
+# Delete
+Event.objects.filter(title="Workshop").delete()
