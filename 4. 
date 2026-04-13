@@ -15,3 +15,15 @@ def student():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+<!-- Q: Display student data in table -->
+
+<table border="1">
+<tr><th>Name</th><td>{{ data.name }}</td></tr>
+<tr><th>Age</th><td>{{ data.age }}</td></tr>
+<tr><th>Course</th><td>{{ data.course }}</td></tr>
+<tr><th>City</th><td>{{ data.city }}</td></tr>
+</table>
