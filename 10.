@@ -1,0 +1,11 @@
+# base.html
+
+<html>
+<body>
+<header>Header</header>
+
+{% block content %}{% endblock %}
+
+<footer>Footer</footer>
+</body>
+</html>
