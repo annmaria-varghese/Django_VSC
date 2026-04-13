@@ -1,0 +1,11 @@
+# Q2: Create a Flask app to add two numbers from URL
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/sum/<int:a>/<int:b>')
+def add(a, b):
+    return f"Sum = {a + b}"
+
+if __name__ == '__main__':
+    app.run(debug=True)
