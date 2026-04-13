@@ -1,0 +1,6 @@
+# Q: Total & percentage
+
+marks = [80, 70, 60, 90, 85]
+total = sum(marks)
+percentage = total / 5
+print(total, percentage)
