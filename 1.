@@ -1,0 +1,11 @@
+# Q1: Create a Flask app where user enters name in URL and gets greeting
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/hello/<name>')
+def greet(name):
+    return f"Hello {name}, welcome!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
